@@ -8,8 +8,10 @@
 export function setEncore(additionalSongs) {
     return target => {
         target.prototype.encore = () => {
-            console.log(`---`);
-            return additionalSongs.join(',\n');
+            let encoreMarkupString = `<h2>Encore!!!</h2><p>`;
+            encoreMarkupString += additionalSongs.join('</p><p>');
+            encoreMarkupString += '</p>';
+            target.prototype.appendMarkup(encoreMarkupString);
         }
     };
 }

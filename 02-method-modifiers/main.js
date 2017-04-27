@@ -15,23 +15,32 @@ class CoverBand {
 
     @warn
     rehearse() {
-        return this.songList.length ? this.songList.join(',\n') : 'Do we even know any songs?';
+        let rehearsalMarkupString = `<h2>Time for rehearsal:</h2><p>`;
+        rehearsalMarkupString += this.songList.length ? this.songList.join('</p><p>') : 'Do we even know any songs?';
+        rehearsalMarkupString += '</p>';
+        this.appendMarkup(rehearsalMarkupString);
     }
 
     @preventEmbarrassment
     perform() {
-        return this.songList.length ? this.songList.join(',\n') : `But we don't know any songs!`;
+        let performanceMarkupString = `<h2>Show time!</h2><p>`;
+        performanceMarkupString += this.songList.length ? this.songList.join('</p><p>') : `But we don't know any songs!`;
+        performanceMarkupString += '</p>';
+        this.appendMarkup(performanceMarkupString);
     }
+
+    appendMarkup(string) {
+        let entryPoint = document.getElementById('entryPoint');
+        let originalContent = entryPoint.innerHTML;
+        entryPoint.innerHTML = originalContent + string;
+    }
+
 }
 
 let theSpidersFromMars = new CoverBand();
 
 // expect a console warning about not having songs
-console.log(theSpidersFromMars.rehearse());
-
-console.log(`
----------------
-`);
+theSpidersFromMars.rehearse();
 
 // expect an error to be thrown if there are no songs
-console.log(theSpidersFromMars.perform());
+theSpidersFromMars.perform();

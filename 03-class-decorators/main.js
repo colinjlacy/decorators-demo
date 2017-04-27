@@ -13,14 +13,26 @@ class CoverBand {
     constructor() {}
 
     rehearse() {
-        return this.songList && this.songList.length ? this.songList.join(',\n') : 'Do we even know any songs?';
+        let rehearsalMarkupString = `<h2>Time for rehearsal:</h2><p>`;
+        rehearsalMarkupString += this.songList && this.songList.length ? this.songList.join('</p><p>') : 'Do we even know any songs?';
+        rehearsalMarkupString += '</p>';
+        this.appendMarkup(rehearsalMarkupString);
     }
 
     perform() {
-        return this.songList && this.songList.length ? this.songList.join(',\n') : `But we don't know any songs!`;
+        let performanceMarkupString = `<h2>Show time!</h2><p>`;
+        performanceMarkupString += this.songList && this.songList.length ? this.songList.join('</p><p>') : `But we don't know any songs!`;
+        performanceMarkupString += '</p>';
+        this.appendMarkup(performanceMarkupString);
+    }
+
+    appendMarkup(string) {
+        let entryPoint = document.getElementById('entryPoint');
+        let originalContent = entryPoint.innerHTML;
+        entryPoint.innerHTML = originalContent + string;
     }
 }
 
 let theSpidersFromMars = new CoverBand();
 
-console.log(theSpidersFromMars.perform());
+theSpidersFromMars.perform();

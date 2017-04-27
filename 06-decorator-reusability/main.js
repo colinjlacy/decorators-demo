@@ -9,14 +9,28 @@ import { setEncore } from './encore-decorator';
 
 class CoverBand {
 
-    constructor() {}
+    constructor(name) {
+        this.name = name;
+    }
 
     rehearse() {
-        return this.songList && this.songList.length ? this.songList.join(',\n') : 'Do we even know any songs?';
+        let rehearsalMarkupString = `<h2>Time for rehearsal:</h2><p>`;
+        rehearsalMarkupString += this.songList && this.songList.length ? this.songList.join('</p><p>') : 'Do we even know any songs?';
+        rehearsalMarkupString += '</p>';
+        this.appendMarkup(rehearsalMarkupString);
     }
 
     perform() {
-        return this.songList && this.songList.length ? this.songList.join(',\n') : `But we don't know any songs!`;
+        let performanceMarkupString = `<h2>Ladies and gentlemen, ${this.name}!</h2><p>`;
+        performanceMarkupString += this.songList && this.songList.length ? this.songList.join('</p><p>') : `But we don't know any songs!`;
+        performanceMarkupString += '</p>';
+        this.appendMarkup(performanceMarkupString);
+    }
+
+    appendMarkup(string) {
+        let entryPoint = document.getElementById('entryPoint');
+        let originalContent = entryPoint.innerHTML;
+        entryPoint.innerHTML = originalContent + string;
     }
 }
 
@@ -28,16 +42,9 @@ class BritishCoverBand extends CoverBand {}
 @setHendrixSongs
 class RockCoverBand extends CoverBand {}
 
-let theBritishInvaders = new BritishCoverBand();
-let rehabAllStars = new RockCoverBand();
+let theBritishInvaders = new BritishCoverBand('theBritishInvaders');
+theBritishInvaders.perform();
 
-console.log(`Ladies and gentleman, theBritishInvaders!`);
-console.log(theBritishInvaders.perform());
-
-console.log(`
-------------
-`);
-
-console.log(`Ladies and gentleman, rehabAllStars!`);
-console.log(rehabAllStars.perform());
+let theRehabAllStars = new RockCoverBand('theRehabAllStars');
+theRehabAllStars.perform();
 
