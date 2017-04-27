@@ -9,7 +9,8 @@
     "03": "node_modules/.bin/webpack --config 03-class-decorators/webpack.config.js",
     "04": "node_modules/.bin/webpack --config 04-combining-decorators/webpack.config.js",
     "05": "node_modules/.bin/webpack --config 05-decorator-values/webpack.config.js",
-    "06": "node_modules/.bin/webpack --config 06-decorator-reusability/webpack.config.js"
+    "06": "node_modules/.bin/webpack --config 06-decorator-reusability/webpack.config.js",
+    "all": "npm run 01 && npm run 02 && npm run 03 && npm run 04 && npm run 05 && npm run 06"
   },
   "repository": {
     "type": "git",
@@ -26,8 +27,6 @@
     "babel-loader": "^6.4.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-latest": "^6.24.1",
-    "browser-es-module-loader": "^0.4.1",
-    "node-es-module-loader": "^0.3.6",
     "webpack": "^2.2.1"
   }
 }
