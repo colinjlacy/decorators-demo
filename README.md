@@ -9,12 +9,6 @@ $ npm install
 
 None of the generated output files have been included in this repo; the reason being that I wanted to make it clear that any changes have to be transpiled before they can be run.  
 
-If you'd like to target an individual folder, you'd run against the number prefixing that folder's name:
-```
-# 01 - 06
-$ npm run 01
-```
-
 ### Browser vs Node
 
 This repo comes packaged with two sets of demos.  One runs in the browser, and the other runs in the Node.
