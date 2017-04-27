@@ -28,4 +28,4 @@ To run in Node, checkout the `master` branch and transpile all of the JS files w
 $ node ./node 01-method-decorators/bundle.js
 ```
 
-To run in the browser, checkout the `html` branch.  Again, transpile all of the JS files with the `all` command listed above.  This time, run the `index.html` file from each folder in a web server.
+To run in the browser, checkout the `html` branch.  This time, each folder is set up to run against a Webpack dev server.  Run each folder to serve its contents, and then open your browser to `http://localhost:8080` to see the things run.  Note that the dev server is watching for file changes, so you can play around with the files in the project to see how they work.

@@ -4,13 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "01": "node_modules/.bin/webpack --config 01-method-decorators/webpack.config.js",
-    "02": "node_modules/.bin/webpack --config 02-method-modifiers/webpack.config.js",
-    "03": "node_modules/.bin/webpack --config 03-class-decorators/webpack.config.js",
-    "04": "node_modules/.bin/webpack --config 04-combining-decorators/webpack.config.js",
-    "05": "node_modules/.bin/webpack --config 05-decorator-values/webpack.config.js",
-    "06": "node_modules/.bin/webpack --config 06-decorator-reusability/webpack.config.js",
-    "all": "npm run 01 && npm run 02 && npm run 03 && npm run 04 && npm run 05 && npm run 06"
+    "01": "node_modules/.bin/webpack-dev-server --config ./01-method-decorators/webpack.config.js --content-base ./01-method-decorators --inline --hot",
+    "02": "node_modules/.bin/webpack-dev-server --config ./02-method-modifiers/webpack.config.js --content-base ./02-method-modifiers --inline --hot",
+    "03": "node_modules/.bin/webpack-dev-server --config ./03-class-decorators/webpack.config.js  --content-base ./03-class-decorators --inline --hot",
+    "04": "node_modules/.bin/webpack-dev-server --config ./04-combining-decorators/webpack.config.js  --content-base ./04-combining-decorators --inline --hot",
+    "05": "node_modules/.bin/webpack-dev-server --config ./05-decorator-values/webpack.config.js  --content-base ./05-decorator-values --inline --hot",
+    "06": "node_modules/.bin/webpack-dev-server --config ./06-decorator-reusability/webpack.config.js  --content-base ./06-decorator-reusability --inline --hot"
   },
   "repository": {
     "type": "git",
@@ -27,6 +26,7 @@
     "babel-loader": "^6.4.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-latest": "^6.24.1",
-    "webpack": "^2.2.1"
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.5"
   }
 }
