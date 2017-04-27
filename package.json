@@ -13,14 +13,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.build.ge.com:nola-guilds/esNextBreakfast.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "request": "^2.81.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",
